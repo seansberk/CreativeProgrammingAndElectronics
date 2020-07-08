@@ -2,4 +2,5 @@
 
 This is my HW submission for July 8th
 
-
+Screenshot of my beautiful artwork:
+![](BasketballPortrait.png)
