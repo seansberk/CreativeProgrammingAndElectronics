@@ -5,9 +5,10 @@ class Enemy {
   PImage[] enemyImgs = new PImage[2];
   boolean enemyHit;
   PImage enemyImg;
+  PImage enemyImgHit;
 
 
-  Enemy(float xpos, float ypos, int hp) {
+    Enemy(float xpos, float ypos, int hp) {
     x = xpos;
     y = ypos;
     xSpeed = enemyXSp;
@@ -15,6 +16,8 @@ class Enemy {
     health = hp;
     enemyAlive = true;
     enemyHit = false;
+    enemyImg = loadImage("img/Enemy1.png");
+    enemyImgHit = loadImage("img/Enemy1b.png");
   }
 
   void update() {
@@ -25,11 +28,28 @@ class Enemy {
   void checkCollisions() {
     /* This method check to see if it has collided with any of the boundaries or with other objects */
     float r = enemySize/2;
-    if ((x<r)||(x>width-r)) {
+    if (((x<r)||(x>width-r)) & (x>=0)) {
       xSpeed = -xSpeed;
+      bounce.play();
     }
-    if ((y<r) || (y>height-r)) {
+    if (((y<r) || (y>height-r)) & (x>=0)) {
       ySpeed = -ySpeed;
+      bounce.play();
+    }
+    if (enemyHit == true) {
+      health -= 1;
+    }
+  }
+
+  void checkDead() {
+    if (health < 1) {
+      enemyAlive = false;
+    }
+    if (enemyAlive == false) {
+      x = -100;
+      y = -100;
+      xSpeed = 0; 
+      ySpeed = 0;
     }
   }
 
@@ -59,9 +79,17 @@ class Enemy {
   //}
 
   void drawEnemy() {
-    fill(200); 
-    rect(x, y, enemySize, enemySize);
-    
+    if (enemyHit == true) {
+      image(enemyImgHit, x, y, enemySize, enemySize);
+      //enemyHit = false; //meant to only temporarily change the display but it immediately prevents it
+    }
+    else {
+      image(enemyImg, x, y, enemySize, enemySize);
+    }
+
+    //fill(200); 
+    //rect(x, y, enemySize, enemySize); //original enemy visual for testing purposes
+
     //if (enemyAlive == false) {
     //  xSpeed = 0;
     //  ySpeed = 0;
@@ -75,28 +103,16 @@ class Enemy {
     //  enemyAlive = false;
     //}
   }
-  float topLeftX() {
+  float leftX() {
     return x - enemySize/2;
   }
-  float topLeftY() {
+  float topY() {
     return y - enemySize/2;
   }
-  float topRightX() {
+  float rightX() {
     return x + enemySize/2;
   }
-  float topRightY() {
-    return y - enemySize/2;
-  }
-  float botLeftX() {
-    return x - enemySize/2;
-  }
-  float botLeftY() {
-    return y + enemySize/2;
-  }
-  float botRightX() {
-    return x + enemySize/2;
-  }
-  float botRightY() {
+  float botY() {
     return y + enemySize/2;
   }
 }

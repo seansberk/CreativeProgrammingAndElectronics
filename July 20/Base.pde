@@ -54,28 +54,17 @@ class Base {
   
   /* The below finds the coordinates of each point and will be used to compare to the coordinates of 
   the base to find if the enemy has hit or not */
-  float topLeftX() {
+  
+  float leftX() {
     return x - baseSize/2;
   }
-  float topLeftY() {
+  float topY() {
     return y - baseSize/2;
   }
-  float topRightX() {
+  float rightX() {
     return x + baseSize/2;
   }
-  float topRightY() {
-    return y - baseSize/2;
-  }
-  float botLeftX() {
-    return x - baseSize/2;
-  }
-  float botLeftY() {
-    return y + baseSize/2;
-  }
-  float botRightX() {
-    return x + baseSize/2;
-  }
-  float botRightY() {
+  float botY() {
     return y + baseSize/2;
   }
 }
