@@ -10,9 +10,9 @@ Board light blinking: Indicates Button is pressed
 
 Green light on: button pressed
 
-This is my Schematic: ![](Schematic.heic)
+This is my Schematic: ![](Schematic.jpg)
 
-This is my Arduino Circuit: ![](Arduino.heic)
+This is my Arduino Circuit: ![](Arduino.jpg)
 
 
 Problems:
