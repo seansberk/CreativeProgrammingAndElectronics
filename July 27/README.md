@@ -7,7 +7,7 @@ This project aimed at making an integrated metronome that would play constantly 
 I had used an incrementing value of 1.6 times the metronome speed to increase and .625 to decrease the metronome rate. This provided the cleanest decimal point values. I also spent a decent amount of time making the functions which I think worked out to implement my project quite well.
 
 **Problems (if any) and how you overcame them**
-I have been having problems largely with compiling the program because for some reason some varaibles don't want to be declared.
+I have been having problems largely with compiling the program because for some reason some varaibles don't want to be declared recieving error messages about the variable titles not working. For some of the cases I realized I was using a java based problem which was making new objects from my classes with the new keyword when this was not necessary in C++ for arduino. I also had problems trying to make the plucker properly work because I thought that I should have the motor spin as quickly as I could get it to.
 
 
 **Schematic**
