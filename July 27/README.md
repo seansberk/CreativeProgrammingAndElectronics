@@ -1,24 +1,24 @@
-*Description of project*
+**Description of project**
 
 
-Anything clever or tricky
-
-
-
-Problems (if any) and how you overcame them
+**Anything clever or tricky**
 
 
 
-Schematic
+**Problems (if any) and how you overcame them**
 
 
 
-Link to short video of the instrument being played
+**Schematic**
 
 
 
-Photograph of the instrument
+**Link to short video of the instrument being played**
 
 
 
-Closeup photograph of the electronics
+**Photograph of the instrument**
+
+
+
+**Closeup photograph of the electronics**
