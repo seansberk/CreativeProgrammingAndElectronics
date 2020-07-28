@@ -16,13 +16,13 @@ I have been having problems largely with compiling the program because for some 
 
 **Link to short video of the instrument being played**
 
+https://youtu.be/EwJ-vV7CoPA
 
-
-**Photographs of the instrument**
+**Photograph of the instrument**
 
 ![](IMG_8075.JPG)
 
-**Closeup photograph of the electronics**
+**Closeup photographs of the electronics**
 
 ![](IMG_8073.JPG)
 ![](IMG_8074.JPG)
