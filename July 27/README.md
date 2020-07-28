@@ -20,7 +20,7 @@ https://youtu.be/EwJ-vV7CoPA
 
 **Photograph of the instrument**
 
-![](IMG_8075.JPG)
+![](IMG-8075.JPG)
 
 **Closeup photographs of the electronics**
 
