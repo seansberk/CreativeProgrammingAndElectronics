@@ -20,8 +20,9 @@ I have been having problems largely with compiling the program because for some 
 
 **Photographs of the instrument**
 
-![](.JPG)
+![](8073.JPG)
+![](8074.JPG)
 
 **Closeup photograph of the electronics**
 
-![](.JPG)
+![](8075.JPG)
