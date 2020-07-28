@@ -4,6 +4,7 @@
 //
 //    // Initialize the note duration for on and off
 //    int noteDuration;
+//    int noteL;
 //
 //    // Increases and decreases the tempo
 //    int buttonSpeedUp;
@@ -18,28 +19,37 @@
 //
 //    // Time tracker for last time the sound was updated
 //    unsigned long previousMillis;
-//    
+//
+//  public:
 //    Metronome(int note, int pinNum) {
-//      noteDuration = 1000 / note;
+//      noteL = note;
+//      noteDuration = 1000 / noteL;
 //      pin = pinNum;
-//      
+//
 //      increment = 1.2;
 //    }
 //
 //    void Update() {
-//      currentMillis = millis();
-//      if (currentMillis-previousMillis <= noteDuration*2) {
-//        tone(pin,sound, noteDuration);  
+//      int currentMillis = millis();
+//      int duration = noteDuration*2;
+//      if (currentMillis-previousMillis > duration) {
+//        tone(pin,sound,noteDuration);
 //        previousMillis = currentMillis;
 //      }
 //    }
 //
 //    void increaseSpeed () {
-//      noteDuration = noteDuration * 1.6;
+//        if (noteL <= 8){
+//          noteL += 1;
+//          noteDuration = 1000/noteL;
+//        }
 //    }
 //
 //    void decreaseSpeed() {
-//      noteDuration = noteDuration * 0.625;
+//      if (noteL > 1) {
+//        noteL -= 1;
+//        noteDuration = 1000/noteL;
+//      }
 //    }
 //
-//}
+//};

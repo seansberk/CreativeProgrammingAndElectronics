@@ -7,7 +7,10 @@
    setting a tempo which can be changed with switches as if it was a meteronome
 
    Dev note: Spinner is no longer being used and is currently storing a class for
-   led's which was intended to be used to indicate the meteronome speed in binary
+   led's which was intended to be used to indicate the meteronome speed in binary.
+   Furthermore, both classes Metronome and Plucker were moved to this file as they
+   won't be recognized due to the file naming scheme. This will be something I
+   will be aware of in the future
 */
 
 #include "pitches.h"
@@ -19,6 +22,7 @@ class Metronome {
 
     // Initialize the note duration for on and off
     int noteDuration;
+    int noteL;
 
     // Increases and decreases the tempo
     int buttonSpeedUp;
@@ -35,54 +39,78 @@ class Metronome {
     unsigned long previousMillis;
 
   public:
+    // Constructor
     Metronome(int note, int pinNum) {
-      noteDuration = 1000 / note;
+      noteL = note;
+      noteDuration = 1000 / noteL;
       pin = pinNum;
 
       increment = 1.2;
     }
 
+    // Method called to update the information of the metronome
     void Update() {
       int currentMillis = millis();
-      if (currentMillis - previousMillis <= noteDuration * 2) {
-        tone(pin, sound, noteDuration);
+      int duration = noteDuration*2;
+      if (currentMillis-previousMillis > duration) {
+        tone(pin,sound,noteDuration);
         previousMillis = currentMillis;
       }
     }
 
+    // Method used to increase the beep rate of the meteronome maxing out at an eigth
+    // not to prevent the rate getting too high and making just a single long beep
     void increaseSpeed () {
-      noteDuration = noteDuration * 1.6;
+        if (noteL <= 8){
+          noteL += 1;
+          noteDuration = 1000/noteL;
+        }
     }
 
+    // Method used to decrease beep rate of the metronome with at a minimum being 
+    // 1000 milliseconds so as to not have the meteronome stop playing completely
     void decreaseSpeed() {
-      noteDuration = noteDuration * 0.625;
+      if (noteL > 1) {
+        noteL -= 1;
+        noteDuration = 1000/noteL;
+      }
     }
 
 };
 
 class Plucker {
-    Servo Finger;
-    int pos;
-    int increment;
-    int updateInterval;
-    unsigned long lastUpdate;
-
   public:
+    // Initializing the Servo within the Plucker as a Finger
+    Servo Finger;
+
+    // Initializes and stores Servo position
+    int pos;
+
+    // Used to update the increment of the rotation but this currently has no use
+    int increment;
+
+    int updateInterval;
+//    unsigned long lastUpdate;                         // No longer used
+
+    // Constructor
     Plucker(int interval) {
       updateInterval = interval;
       increment = 5;
     }
 
+    // Method to attach pin to Finger
     void Attach(int pin) {
       Finger.attach(pin);
     }
 
+    // Method to detatch pin from Finger
     void Detach() {
       Finger.detach();
     }
 
+    // Method to be called in loop to update the Finger
     void Update() {
-      // Will update the servo position
+      // Will update the servo position                 // No longer used
       //      if ((millis() - lastUpdate) > updateInterval) {
       //        lastUpdate = millis();
       //        pos += increment;
@@ -93,63 +121,47 @@ class Plucker {
       //        }
       //      }
 
+      // rotates the servo 180 degrees each way
       if (pos < 180) {
-        pos = 0;
+        pos = 180;
         Finger.write(pos);
       } else if (pos > 0) {
-        pos = 180;
+        pos = 0;
         Finger.write(pos);
       }
     }
 };
 
-
-// Create a servo object called finger to pluck strings
-Servo finger;
-
-// Stores servo position
-int pos = 0;
-
-//int melody[] = {
-//  NOTE_C4, NOTE_G3, NOTE_G3, NOTE_A3, NOTE_G3, 0, NOTE_B3, NOTE_C4
-//};
-//
-//int noteDurations[] = {
-//  4, 8, 8, 4, 4, 4, 4, 4
-//};
-
-// Button press to play note
-
+// Stores servo position, originally used it testing
+int pos = 0;                                           // No longer used
 
 // Meteronome object initialized with
-Metronome metronome = Metronome(4, 7);
+Metronome metronome = Metronome(4, 8);
 
 // Plucker object initialized
 Plucker finger = Plucker(5);
-Plucker.attach(9);
 
 void setup() {
-  // put your setup code here, to run once:
-  //  pinMode(8, OUTPUT);
-  //  pinMode(10, OUTPUT);
-
+  // this attached the pin to the finger servo
+  finger.Attach(9); 
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
+  // This checks the metronome to see what it should play
+  metronome.Update();
+  
   // This checks to see if the button is pressed and causes the servo to turn and this
   // plucking the guitar string
-  if (digitalread(11) == HIGH) {
-    finger.update();
+  if (digitalRead(11) == HIGH) {
+    finger.Update();
   }
 
   // These if statements check to see if their respective buttons are pressed, increasing
   // or decreasing the meteronome speed
-  if (digitalread(12) == HIGH) {
+  if (digitalRead(12) == HIGH) {
     metronome.increaseSpeed();
   }
-  if (digitalread(13) == HIGH) {
+  if (digitalRead(13) == HIGH) {
     metronome.decreaseSpeed();
   }
 
