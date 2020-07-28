@@ -12,7 +12,7 @@ I have been having problems largely with compiling the program because for some 
 
 **Schematic**
 
-
+![](IMG_8080.JPG)
 
 **Link to short video of the instrument being played**
 
