@@ -8,7 +8,8 @@ class Enemy {
   PImage enemyImgHit;
 
 
-    Enemy(float xpos, float ypos, int hp) {
+  Enemy(float xpos, float ypos, int hp) {
+    /* Constructor */
     x = xpos;
     y = ypos;
     xSpeed = enemyXSp;
@@ -38,6 +39,7 @@ class Enemy {
     }
     if (enemyHit == true) {
       health -= 1;
+      //blaster.play();
     }
   }
 
@@ -82,8 +84,7 @@ class Enemy {
     if (enemyHit == true) {
       image(enemyImgHit, x, y, enemySize, enemySize);
       //enemyHit = false; //meant to only temporarily change the display but it immediately prevents it
-    }
-    else {
+    } else {
       image(enemyImg, x, y, enemySize, enemySize);
     }
 

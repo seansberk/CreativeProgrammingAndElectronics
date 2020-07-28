@@ -22,17 +22,16 @@ Base homeBase;
 
 /* Initializing Sound files */
 SoundFile bounce;
-// Inserting new SoundFile for destroyed enemy
-
-/* Initializing  */
+SoundFile blaster;
 
 // Initialize the background image of the game
 PImage bkgrd;
 
 void setup() {
-  size(700, 700);
+  size(768, 768);
   smooth();
   bounce = new SoundFile(this, "sound/Bounce.mp3"); // set the first parameter and check to see if this works
+  blaster = new SoundFile(this, "sound/Blaster.mp3");
 
   // Adding the enemies to the array
   for (int i=0; i<enemies.length; i++) {
@@ -49,8 +48,8 @@ void setup() {
 }
 
 void draw() {
-  //background(bkgrd);
-  background(0);
+  background(bkgrd);
+  //background(0);
   
   enemiesDead = 0;
   hitEnemy();
@@ -68,6 +67,7 @@ void draw() {
   homeBase.drawBase();
   //print(homeBase.health); //Debugging if the health decreases
   //println(homeBase.topY()); //Debugging if the homeBase positioning is being properly reported
+  gameOver();
 }
 
 void mousePressed() {
@@ -97,11 +97,22 @@ void hitBase() {
         homeBase.health -= 1;
       }
     }
-    //if (((enemies[i].rightX >= homeBase.leftX()) & mXPos <= homeBase.rightX()) & 
-    //  (mYPos >= homeBase.topY()) & (mYPos <= homeBase.botY())) {
-    //  homeBase.health -= 1;
-    //}
   }
   mXPos = -1;
   mYPos = -1;
+}
+
+void gameOver() {
+  /* This checks for the Game Over gamestate */
+  // This checks to see if all the enemies have died and if so increases the number of dead enemies
+  if (enemiesDead >= enemies.length) {
+    enemyNumber = enemyNumber*2;
+
+    // This initializes all the new enemies
+    for (int i=0; i<enemies.length; i++) {
+      enemies[i] = new Enemy(random(enemySize, width-enemySize), random(enemySize, width-enemySize), 2);
+    }
+    // Adding a new Home Base 
+    homeBase = new Base(random(baseSize, width-baseSize), random(baseSize, width-baseSize), 100);
+  }
 }

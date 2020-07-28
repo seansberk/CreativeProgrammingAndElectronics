@@ -5,6 +5,7 @@ class Base {
   PImage base;
 
   Base(float xpos, float ypos, int hp) {
+    /* Constructor */
     x = xpos;
     y = ypos;
     xSpeed = 0;
@@ -29,14 +30,14 @@ class Base {
       ySpeed = -ySpeed;
     }
   }
-  
-  
+
+
   //void losehealth() {
-    /* This method is meant to cause the base to lose health
-    However, this may need a funciton built within MT_Game to be able to work on both enemy and base */
+  /* This method is meant to cause the base to lose health
+   However, this may need a funciton built within MT_Game to be able to work on both enemy and base */
   //  health -= 
   //}
-  
+
   //void checkAttack() {
   //  // Check for the position of the Enemy relative to the position of the base
   //  // THIS MAY NEED TO BE DONE OUTSIDE OF THE ENEMY CLASS
@@ -48,13 +49,13 @@ class Base {
 
   void drawBase() {
     //fill(140); 
-    //rect(x, y, baseSize, baseSize);
+    //rect(x, y, baseSize, baseSize); //Original Base images for inital testing
     image(base, x, y, baseSize, baseSize);
   }
-  
+
   /* The below finds the coordinates of each point and will be used to compare to the coordinates of 
-  the base to find if the enemy has hit or not */
-  
+   the base to find if the enemy has hit or not */
+
   float leftX() {
     return x - baseSize/2;
   }
