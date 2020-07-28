@@ -12,7 +12,7 @@ I have been having problems largely with compiling the program because for some 
 
 **Schematic**
 
-![](IMG_8080.JPG)
+![](IMG-8080.JPG)
 
 **Link to short video of the instrument being played**
 
@@ -20,7 +20,7 @@ https://youtu.be/EwJ-vV7CoPA
 
 **Photograph of the instrument**
 
-![](IMG-8075.JPG)
+![](IMG_8075.JPG)
 
 **Closeup photographs of the electronics**
 
