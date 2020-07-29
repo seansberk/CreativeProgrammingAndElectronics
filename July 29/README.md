@@ -17,7 +17,7 @@ At first I was a bit confused about how to communicate between the Arduino and t
 
 **Link to short video of the game being played**
 
-
+When I went to record something seems to have gone wrong with my project and it no longer communicates with the arduino
 
 
 **Closeup photographs of the electronics**
