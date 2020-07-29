@@ -2,9 +2,11 @@ import processing.sound.*;
 import processing.serial.*;
 
 /* Initializing Components to work with Arduino */
-Serial myPort = new Serial(this, Serial.list()[4], 9600);
+Serial myPort;
+//float[] inByte = ;
 float inByte = 0;
-
+int pauseCheck;
+int unpauseCheck;
 
 /* Initializing Pause State */
 boolean pause = false;
@@ -42,6 +44,7 @@ PImage bkgrd;
 void setup() {
   size(768, 768);
   smooth();
+  myPort = new Serial(this, Serial.list()[4], 9600);
   bounce = new SoundFile(this, "sound/Bounce.mp3"); // set the first parameter and check to see if this works
   blaster = new SoundFile(this, "sound/Blaster.mp3");
 
@@ -136,11 +139,32 @@ void serialEvent (Serial myPort) {
   
   if (inString != null) {
     inString = trim(inString);
-    inByte = int(inString);
-    println(inByte);
+    int sensors[] = int(split(inString, ','));
+    
+    for (int sensorNum = 0; sensorNum < sensors.length; sensorNum++) {
+      print("Sensor " + sensorNum + ":" + sensors[sensorNum]);
+    }
+    println();
+    
+    // Included all the values for each sensor
+    float size = sensors[0]; 
+    unpauseCheck = sensors[1];
+    pauseCheck = sensors[2];
     
     // This should be used to change the size of the enemies
-    inByte = map(inByte, 0, 1023, enemyMinSize, enemyMaxSize);
-    enemyCurrentSize = int(inByte);
+    size = map(size, 0, 1023, enemyMinSize, enemyMaxSize);
+    enemyCurrentSize = int(size);
+    
+    if (unpauseCheck >= 1) {
+      pause = false;
+    } else if (pauseCheck >= 1) {
+      pause = true;
+    }
+  }
+}
+
+void pauseGame() {
+  while (pause == true) {
+    ;
   }
 }
