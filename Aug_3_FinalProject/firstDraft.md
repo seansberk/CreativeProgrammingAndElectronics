@@ -10,9 +10,9 @@ The idea I have in mind, is to create a robot that interacts with its environmen
 
 I took inspiration from a youtube video I watched of a cleaning robot that vaccuums and cleans floors and it was quite advanced. This led me to thinking about how I had held a conversation with someone about these cleaning robots and how they mapped the inside of your home, similar to how google maps the streets of the world. I thought this was an interesting concept and while I was doing research for our presentation, I had come across the creative programmer that I became inspired by who takes inputs from the world to create generative art. Their name is Patrick Hubner and they have produced unique alcohol labels based on weather patterns as well as dynamic art works responsive to twitter interactions. Taking the idea of multiple unique and diverse interactions from online, and devloping an artwork out of that became something that I thought could be applied to my life in at home especially while in quarantine where a lot of life has been centered around home based living.
 
-![Dyson 360 Eye Vaccuum](https://www.youtube.com/watch?v=k3uh-gv8Isw)
+!['Dyson 360 Eye Vaccuum'](https://www.youtube.com/watch?v=k3uh-gv8Isw)
 
-![Patrick Hubner](https://www.patrik-huebner.com/portfolio/)
+!['Patrick Hubner'](https://www.patrik-huebner.com/portfolio/)
 
 **Planned Implementation**
 
