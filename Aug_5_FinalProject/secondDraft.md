@@ -46,3 +46,11 @@ I am thinking an alternative approach to having the robot draw the room in realt
 
 **Expansion**
 If this can have an GUI that allows for communication between the arduino and whatever computer is being used, this could open the door to controlling the robot telling it when to start stop and to modify variables via this GUI.
+
+**Additional Reference Material**
+
+In combination with what we have learned in class, I will use reference material from Sparkfun's website: 
+
+https://learn.sparkfun.com/tutorials/sparkfun-inventors-kit-experiment-guide---v41
+
+This has information that I can use to better understand how different components work and test them out before I actually implement them. This also has some information about working with this kit and making it into a robot that can move.
