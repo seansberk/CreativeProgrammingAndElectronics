@@ -7,4 +7,4 @@ https://drive.google.com/file/d/1dOuK5CNE4zjbYnT26OT7UeUBUE_RKqFP/view?usp=shari
 
 **Dev Notes**
 
-![](IMG_8600.jpg)
+![](IMG_8500.jpg)
