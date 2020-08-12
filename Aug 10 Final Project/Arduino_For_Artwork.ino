@@ -69,7 +69,7 @@ void setup()
   pinMode(PWMB, OUTPUT);
 
   Serial.begin(9600);                       //begin serial communication with the computer
-  Serial.print("Robot Activated!");         //test the serial connection
+//  Serial.print("Robot Activated!");         //test the serial connection
 }
 
 /********************************************************************************/
@@ -178,6 +178,11 @@ float tempF() {
   degreeC = tempC();
   degreeF = degreeC * (9.0 / 5.0) + 32.0;
 }
+
+//float tempC() {
+//  voltage = analogRead(tempPin) * .4882814;
+//  return voltage;
+//}
 
 /********************************************************************************/
 float getLight() {
