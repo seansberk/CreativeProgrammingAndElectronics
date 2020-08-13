@@ -1,3 +1,5 @@
+**VISUALIZE YOUR LIFE ROBOT**
+
 **Project Picture!**
 
 *See more pictures below*
@@ -6,9 +8,9 @@
 
 **About the Project**
 
-This project was my final project for the Design Innovation 23 class. The goal was to create a visualizer that utilized information from the three sensors on board the arduino and communicate their values to create artwork in Processing. The end result was a mobile robot that automatically mapped your room and provide feedback visually with a 3D model of cubes made of cubes.
+This project was my final project for the Design Innovation 23 class. The goal was to create a visualizer that utilized information from the three sensors on board the arduino and communicate their values to create artwork in Processing. The end result was a mobile robot that automatically mapped your room and provide feedback visually with a 3D model of cubes made of cubes. This was achieved by first making the robot able to interact with its environment and the be able to communicate the information from the sensors into processing. I then sent these values and information over to processing via a serial port and in real-time you could see how the movement and inputs of the robot and its sensors led to a visual experience. For a better understanding the referenced youtube video I made is a good place to start.
 
-
+The three sensors were a photoresistor, ultrasonic sensor, and temperature sensor. These impacted the positioning of the 3D lighting, the scale of the model relative to the viewer, and the color of the model respectively. To make the visual experience even more dynamic. I set values to change over time based on the inputs from the ardunio so that for example, the color change would be easier to see (as too much variation in the values would make a stagnant color profile). If you would like to know more and have read through this document please feel free to reach out to me!
 
 **Problems and how you overcame them**
 ![](IMG_8500.jpg)
