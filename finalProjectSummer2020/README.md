@@ -1,21 +1,12 @@
-**A video presenting your project**
+**Project Picture!**
 
-Discuss some of your process or elements of the project, whatever you think is interesting.
+*See more pictures below*
 
-This can be the same as the live presentation
+![](IMG_8525.jpg)
 
-There is no time limit
+**About the Project**
 
-This video must be somewhere on the internet
-
-
-**New github folder called "finalProjectSummer2020" to include:**
-An enticing picture of your project:
-
-![](IMG_8529.jpg)
-
-A short (2-4 sentences) yet enticing description of your project
-
+2-4 sentences
 
 **Clever and Tricky issues**
 
@@ -27,13 +18,13 @@ A short (2-4 sentences) yet enticing description of your project
 
 ![]()
 
-**Photographs of the project**
-
-![]()
-
-**Closeup photograph of the electronics**
-
-![]()
+**Photographs of the project and close ups of the electronics**
+![](IMG_8526.jpg)
+![](IMG_8527.jpg)
+![](IMG_8528.jpg)
+![](IMG_8529.jpg)
+![](IMG_8530.jpg)
+![](IMG_8531.jpg)
 
 **Link to the video**
 
