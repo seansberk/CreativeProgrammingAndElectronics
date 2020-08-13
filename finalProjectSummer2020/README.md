@@ -12,7 +12,7 @@ This video must be somewhere on the internet
 **New github folder called "finalProjectSummer2020" to include:**
 An enticing picture of your project:
 
-![]()
+![](IMG_8529.jpg)
 
 A short (2-4 sentences) yet enticing description of your project
 
