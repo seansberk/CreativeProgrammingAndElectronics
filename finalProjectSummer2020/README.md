@@ -40,3 +40,5 @@ I am proud of some of the features I implemented on the hardware side. One was t
 https://youtu.be/ZStyUsbO5Ws
 
 
+**Google Drive link for progress documentation**
+https://drive.google.com/file/d/1dOuK5CNE4zjbYnT26OT7UeUBUE_RKqFP/view?usp=sharing
