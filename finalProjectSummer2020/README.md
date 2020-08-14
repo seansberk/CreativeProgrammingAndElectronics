@@ -41,4 +41,6 @@ https://youtu.be/ZStyUsbO5Ws
 
 
 **Google Drive link for progress documentation**
-https://drive.google.com/file/d/1dOuK5CNE4zjbYnT26OT7UeUBUE_RKqFP/view?usp=sharing
+https://drive.google.com/drive/folders/1zqv21iMCAdXKXT1f92I83NaoF0eVflSG?usp=sharing
+
+*you need a berkeley email for access, if you don't have access to such email just let me know and I would love to give you access!*
